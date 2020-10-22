@@ -1,21 +1,36 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Home from "./pages/Home";
+import Registeries from "./pages/Registeries";
+import Gallery from "./pages/Gallery";
+import Journal from "./pages/Journal";
+import Nav from "./components/Nav";
+import Jumbotron from "./components/Jumbotron"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+
+
+function App() {
+
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <Jumbotron />
+        <Switch> 
+          <Route exact path="/" component={SignIn} />
+          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/journal" component={Journal} />
+          <Route exact path="/registeries" component={Registeries} />
+        </Switch> 
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;

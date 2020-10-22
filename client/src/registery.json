@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Target",
+        "image": "target.png",
+        "url": "https://www.target.com" 
+        
+    },
+
+    {
+        "id": 2,
+        "name": "Buy Buy Baby",
+        "image": "buybuybaby.png",
+        "url": "https://www.buybuybaby.com"
+        
+    },
+
+    {
+        "id": 3,
+        "name": "Amazon",
+        "image": "amazon.png", 
+        "url": "https://www.amazon.com"
+        
+    }
+
+]
