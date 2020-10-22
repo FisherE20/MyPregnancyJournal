@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
-import Registeries from "./pages/Registeries";
-import Gallery from "./pages/Gallery";
 import Journal from "./pages/Journal";
+import Gallery from "./pages/Gallery";
+import Registry from "./pages/Registry";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron"
+
 
 
 
@@ -16,8 +17,8 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Nav />
+    <div>
+      <Nav />
         <Jumbotron />
         <Switch> 
           <Route exact path="/" component={SignIn} />
@@ -26,7 +27,7 @@ function App() {
           <Route exact path="/home" component={Home} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/journal" component={Journal} />
-          <Route exact path="/registeries" component={Registeries} />
+          <Route exact path="/registry" component={Registry} />
         </Switch> 
       </div>
     </Router>

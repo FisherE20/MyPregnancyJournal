@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-
-function Registeries() {
-   return (
+function registry() {
+    return(
+        
         <div className="grid-container">
         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
           <div className="cell">
@@ -34,10 +34,7 @@ function Registeries() {
           </div>
         </div>
       </div>
-    
     );
-
-    
 }
 
-export default Registeries;
+export default registry;
