@@ -25,6 +25,7 @@
     "prettier": "^1.13.7"
   },
   "dependencies": {
+    "@types/mailgun-js": "^0.22.11",
     "axios": "^0.20.0",
     "bcryptjs": "2.4.3",
     "cookie-parser": "^1.4.5",
@@ -33,6 +34,7 @@
     "express-session": "^1.16.1",
     "foundation-sites": "^6.6.3",
     "if-env": "^1.0.4",
+    "mailgun.js": "^2.0.1",
     "mongoose": "^5.10.9",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",

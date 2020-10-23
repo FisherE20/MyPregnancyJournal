@@ -45,7 +45,11 @@ function Gallery() {
         <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
         <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
       </nav>
+      <label for="exampleFileUpload" class="button">Upload File</label>
+      <input type="file" id="exampleFileUpload" class="show-for-sr"></input>
     </div>
+
+    
   )
 };
 

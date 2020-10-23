@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Journal from "./pages/Journal";
 import Gallery from "./pages/Gallery";
 import Registry from "./pages/Registry";
+import Contact from "./pages/Contact";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron"
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/journal" component={Journal} />
           <Route exact path="/registry" component={Registry} />
+          <Route exact path="/contact" component={Contact} />
         </Switch> 
       </div>
     </Router>
