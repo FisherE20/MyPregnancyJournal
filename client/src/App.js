@@ -7,7 +7,7 @@ import Journal from "./pages/Journal";
 import Gallery from "./pages/Gallery";
 import Registry from "./pages/Registry";
 import Contact from "./pages/Contact";
-import Jumbotron from "./components/Jumbotron"
+
 
 
 
@@ -17,9 +17,8 @@ function App() {
 
   return (
     <Router>
-    <div>
+      <div>
         
-        <Jumbotron />
         <Switch> 
           <Route exact path="/" component={SignIn} />
           <Route exact path="/signin" component={SignIn} />

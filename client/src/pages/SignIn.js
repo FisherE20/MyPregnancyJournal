@@ -15,16 +15,16 @@ function SignIn() {
     console.log("password is " + signinpassword);
   };
 
-  const login = () => {
-    Axios({
-      method: "POST",
-      data: {
+  const login = (e) => {
+    e.preventDefault();
+    Axios.post(
+      "/api/signin",
+      {
         username: signinusername,
         password: signinpassword
       },
-      withCredentials: true,
-      url: "http://localhost:3001/signin",
-    }).then((res) => console.log(res));
+      
+    ).then((res) => console.log(res));
   };
 
   return (
@@ -42,7 +42,7 @@ function SignIn() {
           </div>
             <div classNameName="medium-6 cell">
             <label>Password
-            <input classNameName="form-control" type="text" secureTextEntry placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            <input classNameName="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </label>
           </div>
           <a href="/home" classNameName="button" onClick = {login} >Submit</a>

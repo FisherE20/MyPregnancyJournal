@@ -1,8 +1,13 @@
 import React from "react";
+import Nav from "../components/Nav";
+import Jumbotron from "../components/Jumbotron";
 
 
 function Gallery() {
     return (
+    <React.Fragment>
+            <Nav />
+            <Jumbotron />
     <div className="row">
       <div className="columns">
         <h2>Photo Gallery</h2>
@@ -32,7 +37,7 @@ function Gallery() {
       </div>
     </div>
   </div>
-      
+  </React.Fragment>  
     
 
     

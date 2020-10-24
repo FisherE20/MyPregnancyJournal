@@ -1,6 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react';
 // import Axios from "axios"; 
 import Nav from "../components/Nav";
+import Jumbotron from "../components/Jumbotron";
 
 function Home() {
     const [timerDays, setTimerDays] = useState('00');
@@ -59,6 +60,7 @@ function Home() {
         
         <React.Fragment>
             <Nav />
+            <Jumbotron />
         <section className="timer-container">
             <section className="timer">
                 <div>

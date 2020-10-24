@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, {useState} from 'react';
-
+import Nav from "../components/Nav";
+import Jumbotron from "../components/Jumbotron";
 
 function Contact () {
     const [email, setEmail] = useState();
@@ -23,6 +24,13 @@ function Contact () {
 
     
         return(
+        <React.Fragment>
+        <Nav />
+        <Jumbotron />
+
+        <div>
+            <h2>Contact</h2>
+        </div>
         <form>
             <div className="grid-container">
                 <div className="grid-x grid-padding-x">
@@ -49,20 +57,12 @@ function Contact () {
                 </div>
             </div>
         </form>
-                    
+        </React.Fragment>            
                 
             
         )
-    }
+    };
 
-// interface IAppProps {
 
-// }
-
-// interface IAppState {
-//     name: String,
-//     subject: String,
-//     message: string
-// }
 
 export default Contact;

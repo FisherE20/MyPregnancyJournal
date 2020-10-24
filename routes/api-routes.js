@@ -138,8 +138,8 @@ app.post('/api/contact', async (req, res, next) => {
     console.log(req.body);
     db.Post.create({
       title: req.body.title,
-      body: req.body.body,
-      category: req.body.category
+      body: req.body.body
+      
     })
       .then(function(dbPost) {
         res.json(dbPost);

@@ -1,8 +1,12 @@
 import React from "react";
+import Nav from "../components/Nav";
+import Jumbotron from "../components/Jumbotron";
 
 function registry() {
     return(
-        
+      <React.Fragment>
+      <Nav />
+      <Jumbotron />
         <div className="grid-container">
         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
           <div className="cell">
@@ -34,6 +38,7 @@ function registry() {
           </div>
         </div>
       </div>
+      </React.Fragment>
     );
 }
 

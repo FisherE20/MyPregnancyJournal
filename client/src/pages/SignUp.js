@@ -37,39 +37,39 @@ function Signup() {
 
   return (
     <div>
-      <div classNameName="mt-4">
+      <div className="mt-4">
         <h2>Sign Up</h2>
       </div>
         <form onSubmit={register}>
-        <div classNameName="grid-container">
-          <div classNameName="">
-          <div classNameName="medium-6 cell">
+        <div className="grid-container">
+          <div className="">
+          <div className="medium-6 cell">
           <label>Username
-          <input classNameName="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
           </label>
         </div>
-        <div classNameName="medium-6 cell">
+        <div className="medium-6 cell">
           <label>Email
-          <input classNameName="form-control" type="text" placeholder="Email" name="email" onChange={(e) => setEmail(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Email" name="email" onChange={(e) => setEmail(e.target.value)} />
           </label>
         </div>
-          <div classNameName="medium-6 cell">
+          <div className="medium-6 cell">
           <label>Password
-          <input classNameName="form-control" type="text" secureTextEntry placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
           </label>
         </div>
-        <div classNameName="medium-6 cell">
+        <div className="medium-6 cell">
           <label>Baby's Nickname 
-          <input classNameName="form-control" type="text" placeholder="Optional" name="nickname" onChange={(e) => setNickname(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Optional" name="nickname" onChange={(e) => setNickname(e.target.value)} />
           </label>
         </div>
-        <div classNameName="medium-6 cell">
+        <div className="medium-6 cell">
           <label>Due Date
-          <input classNameName="form-control" type="text" placeholder="Optional" name="duedate" onChange={(e) => setDuedate(e.target.value)} />
+          <input className="form-control" type="text" placeholder="Optional" name="duedate" onChange={(e) => setDuedate(e.target.value)} />
           </label>
         </div>
       </div>
-      <a href="/" classNameName="button" onClick={register}>Submit</a>
+      <a href="/signin" className="button" onClick={register}>Submit</a>
       </div> 
       
           </form>
