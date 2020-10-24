@@ -5,7 +5,7 @@ let mailgun = mailgunloader({
     domain: 'sandbox3a9741201d8a440cb4dbb42f35c4829c.mailgun.org'
 });
 
-const sendEmail = (to: string, from: string, subject: string, content: string) => {
+const sendEmail = (to, from, subject, content) => {
     let data = {
         to,
         from,

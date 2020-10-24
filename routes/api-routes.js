@@ -1,3 +1,5 @@
+  const mailgunloader = require("mailgun-js");
+
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
@@ -68,5 +70,105 @@ module.exports = function(app) {
   });
 
  
+
+
+app.get('/api/hello', (req,res,next) => {
+    res.json('World');
+});
+
+let mailgun = mailgunloader({
+    apiKey: 'key-696047c12dd5e37a41102745fc72f6f4-53c13666-de69d7c3',
+    domain: 'sandbox3a9741201d8a440cb4dbb42f35c4829c.mailgun.org'
+});
+
+const sendEmail = (to, from, subject, content) => {
+    let data = {
+        to,
+        from,
+        subject,
+        text: content
+    };
+    return mailgun.messages().send(data);
+};
+
+app.post('/api/contact', async (req, res, next) => {
+    try{
+        await sendEmail('flybirdie85@gmail.com', req.body.email, req.body.subject, req.body.message);
+        res.send('Email sent!')
+    }catch(e){
+        console.log(e);
+        res.status(500);
+    }
+});
+
+  // GET route for getting all of the posts
+  app.get("/api/posts/", function(req, res) {
+    db.Post.findAll({})
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // Get route for returning posts of a specific category
+  app.get("/api/posts/category/:category", function(req, res) {
+    db.Post.findAll({
+      where: {
+        category: req.params.category
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/posts/:id", function(req, res) {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // POST route for saving a new post
+  app.post("/api/posts", function(req, res) {
+    console.log(req.body);
+    db.Post.create({
+      title: req.body.title,
+      body: req.body.body,
+      category: req.body.category
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // DELETE route for deleting posts
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
+  // PUT route for updating posts
+  app.put("/api/posts", function(req, res) {
+    db.Post.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
 
 };

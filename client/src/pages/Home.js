@@ -1,12 +1,13 @@
 import React, {useRef, useState, useEffect} from 'react';
 // import Axios from "axios"; 
+import Nav from "../components/Nav";
 
 function Home() {
     const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
-    const [data, setData] = useState(null);
+    
 
     let interval = useRef();
 
@@ -55,6 +56,9 @@ function Home() {
     // };
 
     return(
+        
+        <React.Fragment>
+            <Nav />
         <section className="timer-container">
             <section className="timer">
                 <div>
@@ -84,6 +88,7 @@ function Home() {
                 </div>
             </section>
         </section>
+        </React.Fragment>
     )
 }
 

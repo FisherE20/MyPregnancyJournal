@@ -19,7 +19,7 @@ function App() {
   return (
     <Router>
     <div>
-      <Nav />
+        
         <Jumbotron />
         <Switch> 
           <Route exact path="/" component={SignIn} />
