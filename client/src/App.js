@@ -7,7 +7,6 @@ import Journal from "./pages/Journal";
 import Gallery from "./pages/Gallery";
 import Registry from "./pages/Registry";
 import Contact from "./pages/Contact";
-import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron"
 
 

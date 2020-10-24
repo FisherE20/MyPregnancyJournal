@@ -1,9 +1,37 @@
-import React from "react";
+import Axios from "axios";
+import React, {useState, useEffect} from "react";
 // import CreatePostForm from "../components/CreatePostForm";
 import {Col, Row, Container} from "../components/Grid";
 
 
 function Journal () {
+    const [title, setTitle] = useState();
+    const [currentDate, setCurrentDate] = useState();
+    const [body, setBody] = useState();
+    
+    useEffect(() => {
+        let date = new Date().getDate(); //Current Date
+        let month = new Date().getMonth() + 1; //Current Month
+        let year = new Date().getYear(); //Current Year
+        
+
+        setCurrentDate(
+            month + '/' + date + '/' + year
+            
+        );
+    }, []);
+
+    const sendPost = (e) => {
+        e.preventDefault();
+        Axios.post(
+            "/api/post",
+            {
+                title: title,
+                body: body
+            }
+        ).then((res) => console.log(res));
+    };
+
     return(
         <div>
             
@@ -11,19 +39,25 @@ function Journal () {
                 <Row>
                     <Col size="md-6">
                         <h1>Journal Entry</h1>
-                        <a class="button primary" href="/post/new">New Post</a>
+                        <a className="button primary" href="/post/new">New Post</a>
 
-                        <div class="card mt-4">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <div class="card-subtitle text-muted mb-2">
-                                    Date
-                                </div>
-                                <div class="card-text mb-2">Description</div>
+                        <div className="grid-container">
+                            <div className="grid-x grid-padding-x">
+                            <div className="medium-6 cell">
+                                <label>Title
+                                <input type="text" placeholder="" onChange={(e) => setTitle(e.target.value)}></input>
+                                </label>
+                            </div>
+                            <div className="medium-6 cell">
+                                <label>Date
+                                <text>{currentDate}</text>
+                                </label>
+                            </div>
+                                <textarea placeholder="" onChange={(e) => setBody(e.target.value)}></textarea>
                                 <div>
-                                <a class="button primary" href="#">Save</a>
-                                <a class="button success" href="#">Edit</a>
-                                <a class="button alert" href="#">Delete</a>
+                                <a className="button primary"  href="/journal" onClick= {sendPost}>Save</a>
+                                <a className="button success" href="/journal">Edit</a>
+                                <a className="button alert" href="/journal">Delete</a>
                                 </div>
                             </div>
                         </div>

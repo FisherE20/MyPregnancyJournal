@@ -5,7 +5,22 @@
     {
       "src": "favicon.ico",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "android-chrome/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "512x512",
+      "type": "android-chrome/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "favicon/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "favicon/png"
     }
   ],
   "start_url": "./index.html",

@@ -29,23 +29,23 @@ function SignIn() {
 
   return (
       <div>
-        <div className="mt-4">
+        <div classNameName="mt-4">
           <h2>Sign In</h2>
         </div>
           <form onSubmit={handleSubmit}>
-          <div className="grid-container">
-            <div className="">
-            <div className="medium-6 cell">
+          <div classNameName="grid-container">
+            <div classNameName="">
+            <div classNameName="medium-6 cell">
             <label>Username
-            <input className="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
+            <input classNameName="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
             </label>
           </div>
-            <div className="medium-6 cell">
+            <div classNameName="medium-6 cell">
             <label>Password
-            <input className="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            <input classNameName="form-control" type="text" secureTextEntry placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </label>
           </div>
-          <a href="/home" className="button" onClick = {login} >Submit</a>
+          <a href="/home" classNameName="button" onClick = {login} >Submit</a>
           <p>Not Registered? <a href="/SignUp">Create an Account</a></p>
           </div>
           </div>
