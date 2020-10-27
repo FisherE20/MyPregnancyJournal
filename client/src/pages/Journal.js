@@ -9,7 +9,8 @@ function Journal () {
     const [title, setTitle] = useState();
     const [currentDate, setCurrentDate] = useState();
     const [body, setBody] = useState();
-    
+    // const [post, setPost] = useState([]);
+
     useEffect(() => {
         let date = new Date().getDate(); //Current Date
         let month = new Date().getMonth() + 1; //Current Month
@@ -30,8 +31,17 @@ function Journal () {
                 title: title,
                 body: body
             }
-        ).then((res) => console.log(res));
+        ).then((res) => {console.log(res)
+            Axios.get("/api/posts").then((res) => console.log(res));
+        });
     };
+
+    // const getPost = () => {
+    //     Axios.get(
+    //         "/api/posts"
+
+    //     ).then((res) => setPost(res.body));
+    // };
 
     return(
         <React.Fragment>
@@ -59,11 +69,11 @@ function Journal () {
                 </label>
             </div>
             </div>
-                <a className="button primary"  href="/journal" onClick= {sendPost}>Save</a>
-                <a className="button success" href="/journal">Edit</a>
-                <a className="button alert" href="/journal">Delete</a>
+                <a className="button primary"  href="/journal" onClick={sendPost}>Save</a>
+                
             </div>
         </form>
+            {/* {post.map(p => <p>JSON.strigify(p)</p>)} */}
         </div> 
         </React.Fragment>
             

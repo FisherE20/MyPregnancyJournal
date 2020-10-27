@@ -8,7 +8,7 @@ function Gallery() {
     <React.Fragment>
             <Nav />
             <Jumbotron />
-    <div className="row">
+    {/* <div className="row"> */}
       <div className="columns">
         <h2>Photo Gallery</h2>
       </div>
@@ -36,7 +36,7 @@ function Gallery() {
         <img className="thumbnail" src="./Images/PumpkinPatch.jpg" alt="Pumpkin Patch 2020."></img>
       </div>
     </div>
-  </div>
+  {/* </div> */}
   </React.Fragment>  
     
 
