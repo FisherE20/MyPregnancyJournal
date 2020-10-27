@@ -1,0 +1,16 @@
+
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+  
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 0 auto;
+  justify-content: center;
+}
