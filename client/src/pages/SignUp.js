@@ -70,6 +70,7 @@ function Signup() {
         </div>
       </div>
       <a href="/signin" className="button" onClick={register}>Submit</a>
+      <a href="/SignIn">Back to Sign In</a>
       </div> 
       
           </form>

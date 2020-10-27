@@ -29,7 +29,7 @@ function registry() {
           </div>
           <div className="cell">
             <div className="card">
-              <img src="./Images/Target.jpg" alt="baby"></img>
+              <img src="./Images/target.jpg" alt="baby"></img>
               <div className="card-section">
                 <p>You'll find our registry by clicking on the button below.</p>
                 <a className="button primary" href="HTTPS://www.target.com">View</a>
