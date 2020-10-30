@@ -26,7 +26,8 @@ function SignIn() {
       }
     ).then((res) => {
       if (res.data != null && res.data.id != null) {
-        localStorage.setItem("babyNickname", res.data.nickname)
+        localStorage.setItem("babyNickname", res.data.nickname);
+        localStorage.setItem("dueDate", res.data.duedate);
         window.location="/home";
       } 
 

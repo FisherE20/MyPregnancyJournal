@@ -9,6 +9,7 @@ function Home() {
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
     const [babyNickname, setBabyNickname] = useState('mino');
+    const [dueDate, setDueDate] = useState('');
     
 
     let interval = useRef();
@@ -41,6 +42,7 @@ function Home() {
     // componentDidMount
     useEffect(() => {
         setBabyNickname(localStorage.getItem("babyNickname"));
+        setDueDate(localStorage.getItem("dueDate"));
         startTimer();
         return() => {
             clearInterval(interval.current);
@@ -67,7 +69,9 @@ function Home() {
             <section className="timer">
                 <div>
                     <span className="mdi mdi-calendar-clock"></span>
-                     <h2>Our little {babyNickname} is due to arrive in:</h2>
+                     <h2>Our little {babyNickname} is due to arrive on:</h2>
+                    <h3>{dueDate}</h3>
+                    <h2>which is in:</h2>
                 </div>
                 <div>
                     <section>

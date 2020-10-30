@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     duedate: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true
     }
   });
