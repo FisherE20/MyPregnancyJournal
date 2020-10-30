@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 // import {Col, Row, Container} from "../components/Grid";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
+// import PostsList from "../components/PostsList";
 
 
 function Journal () {
@@ -40,8 +41,16 @@ function Journal () {
         Axios.get(
             "/api/posts"
 
-        ).then((res) => setPost(res.body));
+        ).then((res) => {
+            console.log("logging post");
+            console.log(res);
+            setPost(res.body)
+        });
     };
+
+    useEffect ( () => {
+        getPost();
+    }, []);
 
     return(
         <React.Fragment>
@@ -73,8 +82,11 @@ function Journal () {
                 
             </div>
         </form>
-            {post.map(p => <p>JSON.strigify(p)</p>)}
-        </div> 
+            <h2> All Journal entries</h2>
+              {post}  
+            </div>
+            
+        
         </React.Fragment>
             
             

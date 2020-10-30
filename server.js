@@ -33,7 +33,7 @@ app.get("*", function(req, res) {
 
 // Routes
 // =============================================================
-require("./routes/html-routes.js")(app);
+
 require("./routes/api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app

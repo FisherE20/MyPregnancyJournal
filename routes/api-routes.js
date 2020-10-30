@@ -1,4 +1,4 @@
-  const mailgunloader = require("mailgun-js");
+const mailgunloader = require("mailgun-js");
 
 // Requiring our models and passport as we've configured it
 const db = require("../models");
@@ -10,11 +10,20 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/signin", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
+    console.log("printing out req");
+    console.log(req.user);
     res.json({
-      email: req.users.email,
-      id: req.users.id
+      username: req.user.username,
+      id: req.user.id,
+      duedate: req.user.duedate,
+      nickname: req.user.nickname
     });
   });
+
+  // app.post("/api/signin", passport.authenticate("local"), (req, res) => {
+  //   console.log(req.body);
+  //   res.end();
+  // })
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -25,7 +34,9 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       username: req.body.username,
-      
+      duedate: req.body.duedate,
+      nickname: req.body.nickname
+    
     })
       .then(() => {
         // res.redirect(307, "/api/signin");
@@ -108,6 +119,16 @@ app.post('/api/contact', async (req, res, next) => {
       .then(function(dbPost) {
         res.json(dbPost);
       });
+    
+  });
+
+  app.get("/api/test", function(req, res) {
+    // console.log(req);
+    // db.Post.findAll({})
+    //   .then(function(dbPost) {
+    //     res.json(dbPost);
+    //   });
+    res.send("hello");
   });
 
 

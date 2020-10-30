@@ -32,7 +32,7 @@ function Signup() {
         duedate: duedate,
         nickname: nickname
       }
-    ).then((res) => console.log(res));
+    ).then((res) => window.location="/");
   };
 
   return (
@@ -55,7 +55,7 @@ function Signup() {
         </div>
           <div className="medium-6 cell">
           <label>Password
-          <input className="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+          <input className="form-control" type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
           </label>
         </div>
         <div className="medium-6 cell">

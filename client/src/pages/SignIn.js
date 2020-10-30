@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios"
+import axios from "axios"
 // import Container from "../components/Container/index";
 // import Col from "../components/Col/index";
 // import Row from "../components/Row/index"
@@ -17,15 +17,37 @@ function SignIn() {
 
   const login = (e) => {
     e.preventDefault();
-    Axios.post(
-      "/api/signin",
-      {
-        username: signinusername,
-        password: signinpassword
-      },
-      
-    ).then((res) => console.log(res));
+    axios.post(
+     "/api/signin",
+     {
+        email: signinusername,
+        password: signinpassword,
+        
+      }
+    ).then((res) => {
+      if (res.data != null && res.data.id != null) {
+        localStorage.setItem("babyNickname", res.data.nickname)
+        window.location="/home";
+      } 
+
+    });
   };
+      
+    
+  //   // ).then((res) => console.log(res));
+
+  //   let response = await fetch('/api/signin', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: {
+  //       username: signinusername,
+  //       password: signinpassword
+  //     }
+  //   })
+  //   return response.json();
+  // };
 
   return (
       <div>
@@ -42,7 +64,7 @@ function SignIn() {
           </div>
             <div className="medium-6 cell">
             <label>Password
-            <input className="form-control" type="text" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
+            <input className="form-control" type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)} />
             </label>
           </div>
           <a href="/home" className="button" onClick = {login} >Submit</a>
