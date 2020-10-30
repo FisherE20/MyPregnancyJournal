@@ -6,12 +6,12 @@ import axios from "axios"
 
 
 function SignIn() {
-  const [signinusername, setUsername] = useState();
+  const [signinEmail, setEmail] = useState();
   const [signinpassword, setPassword] = useState();
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("username is " + signinusername);
+    console.log("username is " + signinEmail);
     console.log("password is " + signinpassword);
   };
 
@@ -20,7 +20,7 @@ function SignIn() {
     axios.post(
      "/api/signin",
      {
-        email: signinusername,
+        email: signinEmail,
         password: signinpassword,
         
       }
@@ -58,8 +58,8 @@ function SignIn() {
           <div className="grid-container">
             <div className="">
             <div className="medium-6 cell">
-            <label>Username
-            <input className="form-control" type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)} />
+            <label>Email
+            <input className="form-control" type="text" placeholder="Email" name="email" onChange={(e) => setEmail(e.target.value)} />
             </label>
           </div>
             <div className="medium-6 cell">
